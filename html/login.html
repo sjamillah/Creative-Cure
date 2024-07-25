@@ -32,9 +32,13 @@
     />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../css/login.css" />
-    <link rel="stylesheet" type="text/css" href="../css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/login.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../public/css/responsive.css"
+    />
   </head>
 
   <body>
@@ -61,37 +65,37 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/therapists" class="nav-link">
+                <a href="./therapists.html" class="nav-link">
                   <i class="fa-solid fa-heart-pulse nav-icon"></i>Therapists
                 </a>
               </li>
               <li class="nav-item isPatient">
-                <a href="/checkout" class="nav-link">
+                <a href="./checkout.html" class="nav-link">
                   <i class="bi bi-bag-check nav-icon"></i>Checkout
                 </a>
               </li>
               <li class="nav-item isPatient">
-                <a href="/order-history" class="nav-link">
+                <a href="./order-history.html" class="nav-link">
                   <i class="bi bi-clock-history nav-icon"></i>Order History
                 </a>
               </li>
               <li class="nav-item isAdmin">
-                <a href="/admin-dashboard" class="nav-link">
+                <a href="./admin-dashboard.html" class="nav-link">
                   <i class="fa-solid fa-users-gear nav-icon"></i>Admin Dashboard
                 </a>
               </li>
               <li class="nav-item hasActiveSession">
-                <a href="/chat-session" class="nav-link">
+                <a href="./chat-session.html" class="nav-link">
                   <i class="bi bi-chat-left-dots nav-icon"></i>Chat Session
                 </a>
               </li>
               <li class="nav-item isTherapist">
-                <a href="/my-patients" class="nav-link">
+                <a href="./my-patients.html" class="nav-link">
                   <i class="bi bi-people nav-icon"></i>My Patients
                 </a>
               </li>
               <li class="nav-item isLoggedIn">
-                <a href="/userprofile" class="nav-link">
+                <a href="./userprofile.html" class="nav-link">
                   <i class="bi bi-person-circle nav-icon"></i>Account
                 </a>
               </li>
@@ -101,7 +105,7 @@
                 </a>
               </li>
               <li class="nav-item isLoggedOut">
-                <a href="/login" class="nav-link">
+                <a href="./login.html" class="nav-link">
                   <i class="bi bi-box-arrow-in-right nav-icon"></i>Login
                 </a>
               </li>
@@ -170,7 +174,7 @@
                 </div>
                 <button type="button" id="loginBtn" value="Login">Login</button>
                 <p id="signupDesc">
-                  Don't have an account? <a href="../sign-up">Sign Up</a>
+                  Don't have an account? <a href="./sign-up.html">Sign Up</a>
                 </p>
                 <p id="loginErrorMessage">&nbsp;</p>
               </form>
@@ -207,7 +211,7 @@
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="../public/js/main.js"></script>
+    <script src="../public/js/login.js"></script>
   </body>
 </html>

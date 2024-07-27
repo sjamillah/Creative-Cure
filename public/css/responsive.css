@@ -299,7 +299,7 @@
     }
 
     #wrapper #profileSummary {
-        background: url('../images/radial-bg.svg');
+        background: url('../public/images/radial-bg.svg');
         background-position: center center;
         background-repeat: repeat-y;
         background-size: cover;

@@ -12,8 +12,8 @@ import Modal from "./Modal";
 // OKAY and CANCEL Icons MUI
 import CancelIcon from "@mui/icons-material/Cancel";
 import CheckIcon from "@mui/icons-material/Check";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
-import FormatColorResetIcon from "@mui/icons-material/FormatColorReset";
+// import BorderColorIcon from "@mui/icons-material/BorderColor";
+// import FormatColorResetIcon from "@mui/icons-material/FormatColorReset";
 import Eraser from "../../assets/images/eraser.svg";
 // Pen Icons MUI
 import ModeEditRoundedIcon from "@mui/icons-material/ModeEditRounded";
@@ -27,6 +27,7 @@ const ControlWrapper = styled("div")({
 const InvertedEraser = styled("img")({
   width: "1.5rem",
   height: "1.5rem",
+  filter: "invert(1)",
 });
 
 const BrushSizeLabel = styled("div")({
@@ -61,12 +62,12 @@ const Controls = ({ color, setColor, brushSize, setBrushSize, contextRef, export
     marginRight: { xs: 0, sm: "0.5rem" },
   };
 
-  const iconWithTextSx = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "3rem",
-  };
+  // const iconWithTextSx = {
+  //   display: "flex",
+  //   justifyContent: "space-between",
+  //   alignItems: "center",
+  //   width: "3rem",
+  // };
 
   const [showPicker, setShowPicker] = useState(false);
   const [tempColor, setTempColor] = useState(color);
@@ -124,9 +125,9 @@ const Controls = ({ color, setColor, brushSize, setBrushSize, contextRef, export
     setPickerType(event.target.value);
   };
 
-  const handleBuiltInColorChange = (e) => {
-    handleColorChange(e.target.value);
-  };
+  // const handleBuiltInColorChange = (e) => {
+  //   handleColorChange(e.target.value);
+  // };
   const handleClickOutsideModal = (e) => {
     setShowPicker(false);
     handleColorChange(tempColor);

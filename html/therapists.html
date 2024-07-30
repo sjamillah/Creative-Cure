@@ -54,8 +54,6 @@
       <div id="navPlaceHolder"></div>
       <header id="headMobile">
         <nav class="nav-container">
-          <p id="footerNav">Creative Cure 2024 © COMP 2800</p>
-
           <div class="nav-menu" id="nav-menu">
             <div id="logoMob">
               <a href="/">
@@ -151,7 +149,11 @@
               <p>5 years of experience</p>
               <p>$70 per session</p>
               <div>
-                <button class="therapistBtn" id="thera-btn">
+                <button
+                  class="therapistBtn"
+                  id="thera-btn"
+                  onclick="window.location.href='order-history.html';"
+                >
                   Purchase Session
                 </button>
               </div>
@@ -165,7 +167,11 @@
               <p>8 years of experience</p>
               <p>$90 per session</p>
               <div>
-                <button class="therapistBtn" id="thera-btn">
+                <button
+                  class="therapistBtn"
+                  id="thera-btn"
+                  onclick="window.location.href='order-history.html';"
+                >
                   Purchase Session
                 </button>
               </div>
@@ -179,7 +185,11 @@
               <p>15 years of experience</p>
               <p>$100 per session</p>
               <div>
-                <button class="therapistBtn" id="thera-btn">
+                <button
+                  class="therapistBtn"
+                  id="thera-btn"
+                  onclick="window.location.href='order-history.html';"
+                >
                   Purchase Session
                 </button>
               </div>
@@ -193,7 +203,11 @@
               <p>5 years of experience</p>
               <p>$60 per session</p>
               <div>
-                <button class="therapistBtn" id="thera-btn">
+                <button
+                  class="therapistBtn"
+                  id="thera-btn"
+                  onclick="window.location.href='order-history.html';"
+                >
                   Purchase Session
                 </button>
               </div>
@@ -207,7 +221,11 @@
               <p>3 years of experience</p>
               <p>$70 per session</p>
               <div>
-                <button class="therapistBtn" id="thera-btn">
+                <button
+                  class="therapistBtn"
+                  id="thera-btn"
+                  onclick="window.location.href='order-history.html';"
+                >
                   Purchase Session
                 </button>
               </div>
@@ -221,7 +239,11 @@
               <p>10 years of experience</p>
               <p>$90 per session</p>
               <div>
-                <button class="therapistBtn" id="thera-btn">
+                <button
+                  class="therapistBtn"
+                  id="thera-btn"
+                  onclick="window.location.href='order-history.html';"
+                >
                   Purchase Session
                 </button>
               </div>
@@ -235,7 +257,11 @@
               <p>15 years of experience</p>
               <p>$170 per session</p>
               <div>
-                <button class="therapistBtn" id="thera-btn">
+                <button
+                  class="therapistBtn"
+                  id="thera-btn"
+                  onclick="window.location.href='order-history.html';"
+                >
                   Purchase Session
                 </button>
               </div>
@@ -247,7 +273,7 @@
       <!-- Cart Exist Modal -->
       <div id="cartExistModal">
         <div id="modalContent">
-          <i class="fa-solid fa-xmark" id="closeCart"></i>
+          <i class="fa-solid fa-xmark" id="closeCart" aria-hidden="true"></i>
           <div id="alertIcon">
             <i class="bi bi-bag-check-fill"></i>
           </div>
@@ -262,7 +288,7 @@
       <!-- Active Therapy Session Exist Modal -->
       <div id="therapySessionExistModal">
         <div id="modalContent">
-          <i class="fa-solid fa-xmark" id="closeSession"></i>
+          <i class="fa-solid fa-xmark" id="closeSession" aria-hidden="true"></i>
           <div id="alertIcon">
             <i class="bi bi-exclamation-triangle-fill"></i>
           </div>
@@ -276,7 +302,7 @@
       </div>
 
       <!-- Not Authorized to Purchase Modal -->
-      <div id="notAuthorizedModal">
+      <div id="notAuthorizedModal" style="display: block">
         <div id="modalContent">
           <div id="authorizedModalMessage">
             <h2>Not authorized to purchase!</h2>
@@ -285,7 +311,11 @@
               <a href="./sign-up.html">Sign Up</a> as a patient.
             </p>
           </div>
-          <i class="fa-solid fa-xmark" id="closeAuthorized"></i>
+          <i
+            class="fa-solid fa-xmark"
+            id="closeAuthorized"
+            aria-hidden="true"
+          ></i>
         </div>
       </div>
 

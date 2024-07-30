@@ -5,68 +5,64 @@ const batmanAnimation = document.getElementById('batmanImg');
 const batmanSec = document.getElementById('batmanImg');
 
 /**
- * 
  * This function helps with input validation from the forms to ensure user
- * inputs values that match our patterns and minumum requirements.
+ * inputs values that match our patterns and minimum requirements.
  * 
  * @returns true if the inputted values are invalid.
  */
-function clientInputValidation(){
-    validated = false;
-    var phoneLength = $("#phone").val();
-    if (phoneLength.length != 10) {
+function clientInputValidation() {
+    let validated = false;
+    const phoneLength = $("#phone").val();
+    if (phoneLength.length !== 10) {
         window.scrollTo(0, document.body.scrollHeight);
-        document.getElementById("signUpErrorMessage").style.display = 'block';
-        document.getElementById("signUpErrorMessage").innerHTML = "Your phone number must be of length 10";
+        const errorMessage = "Your phone number must be of length 10";
+        displayError(errorMessage);
     } else if (!isEmail($("#email").val())) {
         window.scrollTo(0, document.body.scrollHeight);
-        document.getElementById("signUpErrorMessage").style.display = 'block';
-        document.getElementById("signUpErrorMessage").innerHTML = "Please follow this email pattern: example@email.com";
+        const errorMessage = "Please follow this email pattern: example@email.com";
+        displayError(errorMessage);
     } else if (inputValidation($("#userType").val())) {
         window.scrollTo(0, document.body.scrollHeight);
-        document.getElementById("signUpErrorMessage").style.display = 'block';
-        document.getElementById("signUpErrorMessage").innerHTML = "There are empty fields";
+        const errorMessage = "There are empty fields";
+        displayError(errorMessage);
     } else if (passwordValidation()) {
         window.scrollTo(0, document.body.scrollHeight);
-        document.getElementById("signUpErrorMessage").style.display = 'block';
-        document.getElementById("signUpErrorMessage").innerHTML = "Password must be at least 5 or less than 20 characters long";
+        const errorMessage = "Password must be at least 5 and no more than 10 characters long";
+        displayError(errorMessage);
     } else if (negativeValidation()) {
         window.scrollTo(0, document.body.scrollHeight);
-        document.getElementById("signUpErrorMessage").style.display = 'block';
-        document.getElementById("signUpErrorMessage").innerHTML = "Experience or cost of session cannot be less than 0";
-    } else{
+        const errorMessage = "Experience or cost of session cannot be less than 0";
+        displayError(errorMessage);
+    } else {
         validated = true;
     }
     return validated;
 }
 
 /**
+ * Displays error messages for duplicate records or success.
  * 
- * This function acts as a helper function that displays proper error messages
- * if duplicate records exists in the database.
- * 
- * @param {*} data as an JSON object
+ * @param {*} data as a JSON object
  */
 function handleSignUpResponse(data) {
-    if (data == "existingEmail") {
-        window.scrollTo(0, document.body.scrollHeight);
-        document.getElementById("signUpErrorMessage").style.display = 'block';
-        document.getElementById("signUpErrorMessage").innerHTML = "A user with that email already exists";
-    } else if (data == "existingPhone") {
-        window.scrollTo(0, document.body.scrollHeight);
-        document.getElementById("signUpErrorMessage").style.display = 'block';
-        document.getElementById("signUpErrorMessage").innerHTML = "A user with that phone number already exists";
-    } else if (data == "existingUsername") {
-        window.scrollTo(0, document.body.scrollHeight);
-        document.getElementById("signUpErrorMessage").style.display = 'block';
-        document.getElementById("signUpErrorMessage").innerHTML = "A user with that username already exists";
-    } else if (data == "login") {
-        document.getElementById("signUpErrorMessage").style.display = 'none';
-        document.getElementById('signupSuccessModal').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => {
-            window.location = '/login'
-        }, 2500);
+    switch(data) {
+        case "existingEmail":
+            displayError("A user with that email already exists");
+            break;
+        case "existingPhone":
+            displayError("A user with that phone number already exists");
+            break;
+        case "existingUsername":
+            displayError("A user with that username already exists");
+            break;
+        case "login":
+            document.getElementById("signUpErrorMessage").style.display = 'none';
+            document.getElementById('signupSuccessModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                window.location = '/login';
+            }, 2500);
+            break;
     }
 }
 
@@ -88,8 +84,9 @@ $('#signupBtn').click(() => {
                 yearsExperience: $("#yearsExperience").val(),
                 sessionCost: $("#sessionCost").val(),
                 password: $("#password").val(),
-            }, success: handleSignUpResponse
-        })
+            },
+            success: handleSignUpResponse
+        });
     }
 });
 
@@ -101,14 +98,14 @@ setInterval(eastereEgg, 1000);
 /**
  * Easter egg function.
  */
-var doOnce = false;
+let doOnce = false;
 /**
  * This function plays an animation when the username field includes the word 'batman'.
  */
 function eastereEgg() {
     $('#username').keyup(function () {
-        var userField = $(this).val().toLowerCase();
-        if (userField.includes('batman') && doOnce == false) {
+        const userField = $(this).val().toLowerCase();
+        if (userField.includes('batman') && !doOnce) {
             window.scrollTo(0, document.body.scrollHeight);
             batmanAnimation.classList.add('startAnimation');
             document.getElementById("audio").play();
@@ -119,22 +116,20 @@ function eastereEgg() {
 }
 
 /**
+ * Checks if the email matches the email pattern.
  * 
- * This function checks to see if the email in the form field mathces the email pattern.
- * 
- * @param {*} email as an input valie
- * @returns true if the email is valid, else returns false.
+ * @param {*} email as an input value
+ * @returns true if the email is valid, otherwise returns false.
  */
 function isEmail(email) {
-    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    const regex = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
 }
 
 /**
- * 
  * Helper function that checks the input validations on the fields.
  * 
- * @param {*} userType as a input value
+ * @param {*} userType as an input value
  * @returns true if the input values are invalid
  */
 function inputValidation(userType) {
@@ -143,33 +138,35 @@ function inputValidation(userType) {
     const inpObjUsername = document.getElementById("username");
     const inpObjExperience = document.getElementById("yearsExperience");
     const inpObjSession = document.getElementById("sessionCost");
-    if (userType == "therapist") {
-        if (!inpObjFirstName.checkValidity() || !inpObjLastName.checkValidity() || !inpObjUsername.checkValidity()
-            || !inpObjExperience.checkValidity() || !inpObjSession.checkValidity()) {
-            return true;
-        }
+    if (userType === "therapist") {
+        return !(
+            inpObjFirstName.checkValidity() &&
+            inpObjLastName.checkValidity() &&
+            inpObjUsername.checkValidity() &&
+            inpObjExperience.checkValidity() &&
+            inpObjSession.checkValidity()
+        );
     } else {
-        if (!inpObjFirstName.checkValidity() || !inpObjLastName.checkValidity() || !inpObjUsername.checkValidity()) {
-            return true;
-        }
+        return !(
+            inpObjFirstName.checkValidity() &&
+            inpObjLastName.checkValidity() &&
+            inpObjUsername.checkValidity()
+        );
     }
 }
 
 /**
- * 
- * Checks the input validation for password field.
+ * Checks the input validation for the password field.
  * 
  * @returns true if the input value is invalid
  */
 function passwordValidation() {
     const inpObjPassword = document.getElementById("password");
-    if (!inpObjPassword.checkValidity()) {
-        return true;
-    }
+    const passwordValue = inpObjPassword.value;
+    return (passwordValue.length < 5 || passwordValue.length > 20);
 }
 
 /**
- * 
  * Checks the input validation for sessionCost and yearsExperience fields.
  * 
  * @returns true if the fields are invalid
@@ -177,9 +174,7 @@ function passwordValidation() {
 function negativeValidation() {
     const yearsExp = document.getElementById("yearsExperience").value;
     const cost = document.getElementById("sessionCost").value;
-    if (yearsExp < 0 || cost < 0) {
-        return true;
-    }
+    return yearsExp < 0 || cost < 0;
 }
 
 

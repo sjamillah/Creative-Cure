@@ -185,7 +185,7 @@ body::-webkit-scrollbar-thumb {
 
 #wrapper #headMobile .nav-container .nav-menu {
     position: fixed;
-    bottom: -100%;
+    top: -100%;
     left: 0;
     width: 100%;
     padding: 6rem 1.5rem 2rem;
@@ -199,7 +199,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #wrapper #headMobile .nav-container .nav-menu.show-menu {
-    bottom: 0;
+    top: 0;
     background: rgba(255, 255, 255, 0.8);
     -webkit-backdrop-filter: blur(5px);
     -moz-backdrop-filter: blur(5px);
@@ -223,7 +223,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     list-style: none;
     padding-left: 0;
-    margin-bottom: 0;
+    margin-top: 0;
     z-index: 9999;
 }
 

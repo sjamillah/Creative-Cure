@@ -40,7 +40,7 @@
     }
 
     #wrapper #headMobile .nav-container .nav-menu .nav-list .nav-item {
-        width: 50%;
+        width: 100%;
     }
 
     #wrapper #footerPlaceHolder {
@@ -141,13 +141,13 @@
         padding: 7rem 3rem;
     }
 
-    #wrapper #therapySec h2 {
-        font-size: 2rem;
+    #wrapper #therapySec h1 {
+        font-size: 3.5rem;
         padding-bottom: 5rem;
     }
 
     #wrapper #therapySec #therapistCards {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     #wrapper #therapySec #therapistCards .therapyCard {
@@ -171,7 +171,7 @@
 
     #wrapper #therapySec #therapistCards .therapyCard h2,
     #wrapper #therapySec #therapistCards .mainCard h2 {
-        font-size: 3.5rem;
+        font-size: 2rem;
         padding-bottom: 2rem;
     }
 

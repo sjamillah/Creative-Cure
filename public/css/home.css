@@ -83,13 +83,13 @@
 #wrapper #therapySec {
     grid-column: 1 / span 4;
     grid-row: 3 / span 1;
-    padding: 10rem 7rem;
+    padding: 14rem 7rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
 }
 
-#wrapper #therapySec h2 {
+#wrapper #therapySec h1 {
     font-size: 3.5rem;
     font-weight: 700;
     color: black;
@@ -131,7 +131,7 @@
 }
 
 #wrapper #therapySec #therapistCards .therapyCard h2 {
-    font-size: 3.2rem;
+    font-size: 2rem;
     font-weight: 700;
     color: black;
     text-align: center;
